@@ -1,0 +1,7 @@
+<%= form_for @test, :url => url_for(:controller => 'tests', :action => 'update') do |f| %>
+    <% @test.question.answers.each do |a| %>
+        <%= a.name %>
+        <%= f.radio_button :answer_id, a.id.to_i %><br>
+    <% end %>
+    <%= f.submit %>
+<% end %>
